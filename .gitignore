@@ -1,0 +1,10 @@
+.Rproj.user
+doc
+Meta
+.RData
+.Rhistory
+*.Rproj
+monashMay5tidytranscriptomics.Rcheck/
+monashMay5tidytranscriptomics*.tar.gz
+monashMay5tidytranscriptomics*.tgz
+dev
