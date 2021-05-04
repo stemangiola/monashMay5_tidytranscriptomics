@@ -1,4 +1,4 @@
-Contributing to TidyTranscriptomics Workshop
+Contributing to TidyTranscriptomics Talk
 ===
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
@@ -14,13 +14,13 @@ The following is a set of guidelines for contributing to this training material 
 
 # What should I know before I get started?
 
-This repository contains the files for the TidyTranscriptomics workshop.
+This repository contains the files for the TidyTranscriptomics talk.
 
 By contributing, you agree that we may redistribute your work under [this repository's license](LICENSE).
 
 We will address your issues and/or assess your change proposal as promptly as we can.
 
-If you have any questions, you can reach us by creating an [Issue](https://github.com/stemangiola/monashMay5_tidytranscriptomics/issues/new/choose) in the workshop repository.
+If you have any questions, you can reach us by creating an [Issue](https://github.com/stemangiola/monashMay5_tidytranscriptomics/issues/new/choose) in the talk repository.
 
 # How can I contribute?
 
