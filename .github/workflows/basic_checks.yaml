@@ -54,10 +54,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: stemangiola/rladiestunis2021_tidytranscriptomics
+          repository: stemangiola/monashMay5_tidytranscriptomics
           tag_with_ref: true
           tag_with_sha: true
-          tags: rladiestunis2021
+          tags: monashMay5
 
       - name: Build pkgdown
         run: |
@@ -69,9 +69,9 @@ jobs:
           apt-get update
           apt-get -y install rsync
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docs # The folder the action should deploy.
+#      - name: Deploy 🚀
+#        uses: JamesIves/github-pages-deploy-action@releases/v3
+#        with:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          BRANCH: gh-pages # The branch the action should deploy to.
+#          FOLDER: docs # The folder the action should deploy.
