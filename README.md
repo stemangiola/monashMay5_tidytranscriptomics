@@ -5,7 +5,7 @@
 
 # Introduction to Tidy Transcriptomics
 <p float="left">
-<img height="100" alt="monashMay5" src="https://github.com/Bioconductor/BiocStickers/blob/71e4c2cb323c441daa0f2f9d48d3b8bbb564a3e2/events/monashMay5/monashMay5.png?raw=true"/>
+<img height="100" alt="monashMay5" src="https://honisoit.com/wp-content/uploads/2020/01/monash-uni-logo-resized.png?raw=true"/>
 <img height="100" alt="tidybulk" src="https://github.com/Bioconductor/BiocStickers/blob/master/tidybulk/tidybulk.png?raw=true"/>
 </p>
 
@@ -23,19 +23,6 @@ More details on the talk are below.
 ## Talk package installation 
 
 This is necessary in order to reproduce the code shown in the talk. The talk is designed for R `4.0` and can be installed using one of the two ways below.
-
-### Via Docker image
-
-If you're familiar with [Docker](https://docs.docker.com/get-docker/) you could use the Docker image which has all the software pre-configured to the correct versions.
-
-```
-docker run -e PASSWORD=abc -p 8787:8787 stemangiola/monashMay5_tidytranscriptomics:monashMay5
-```
-
-Once running, navigate to <http://localhost:8787/> and then login with
-`Username:rstudio` and `Password:abc`.
-
-You should see the Rmarkdown file with all the talk code which you can run.
 
 ### Via GitHub
 
