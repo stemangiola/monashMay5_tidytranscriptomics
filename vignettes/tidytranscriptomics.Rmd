@@ -34,7 +34,7 @@ knitr::include_graphics("../inst/vignettes/roadmap.png")
 knitr::include_graphics("../inst/vignettes/tidybulk_logo.png")
 ```
 
-## Acknowledgements
+**Acknowledgements**
 
 Some of the material in Part 1 was adapted from an R for RNA sequencing talk first run [here](http://combine-australia.github.io/2016-05-11-RNAseq/). The use of the airway dataset was inspired by the [DESeq2 vignette](http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html).
 
@@ -90,7 +90,7 @@ custom_theme <-
 
 ## tidySummarizedExperiment
 
-Here we will perform our analysis using the data from the *airway* package. The airway data comes from the paper by [@himes2014rna]; and it includes 8 samples from human airway smooth muscle cells from 4 cell lines. For each cell line treated (with dexamethasone) and untreated (negative control), a sample has undergone RNA sequencing, and gene counts have been generated.
+Here we will perform our analysis using the data from the *airway* package. The airway data comes from the paper by [@himes2014rna], and it includes 8 samples from human airway smooth muscle cells from 4 cell lines. For each cell line treated (with dexamethasone) and untreated (negative control), a sample has undergone RNA sequencing, and gene counts have been generated.
 
 ```{r}
 # load airway RNA sequencing data
@@ -138,7 +138,7 @@ We can use `select` to choose columns, for example, to see the sample, cell line
 airway %>% select(sample, cell, dex)
 ```
 
-We can use `mutate` to create a column. For example, we could create a new sample_name column that contains shorter sample names. We can remove the SRR1039 prefix present in all of the samples, as shorter names can fit better in some of the plots we will create. We can use `mutate` together with `str_replace` to remove the SRR1039 string from the sample column.
+We can use `mutate` to create a column. For example, we could create a new sample_name column that contains shorter sample names. We can remove the SRR1039 prefix present in all samples, as shorter names can fit better in some of the plots we will create. We can use `mutate` together with `str_replace` to remove the SRR1039 string from the sample column.
 
 ```{r}
 airway %>%
@@ -166,7 +166,7 @@ counts <-
 counts
 ```
 
-## Tidybulk
+## tidybulk
 
 +-----------------------------------+------------------------------------------------------------------------------+
 | Function                          | Description                                                                  |
@@ -204,31 +204,31 @@ counts
 | `test_gene_rank`                  | Gene enrichment on ranked list of transcript names (GSEA)                    |
 +-----------------------------------+------------------------------------------------------------------------------+
 
-+---------------------------------+-----------------------------------------------------------------+
-| Utilities                       | Description                                                     |
-+=================================+=================================================================+
-| `get_bibliography`              | Get the bibliography of your workflow                           |
-+---------------------------------+-----------------------------------------------------------------+
-| `tidybulk`                      | add tidybulk attributes to a tibble object                      |
-+---------------------------------+-----------------------------------------------------------------+
-| `tidybulk_SAM_BAM`              | Convert SAM BAM files into tidybulk tibble                      |
-+---------------------------------+-----------------------------------------------------------------+
-| `pivot_sample`                  | Select sample-wise columns/information                          |
-+---------------------------------+-----------------------------------------------------------------+
-| `pivot_transcript`              | Select transcript-wise columns/information                      |
-+---------------------------------+-----------------------------------------------------------------+
-| `rotate_dimensions`             | Rotate two dimensions of a degree                               |
-+---------------------------------+-----------------------------------------------------------------+
-| `ensembl_to_symbol`             | Add gene symbol from ensembl IDs                                |
-+---------------------------------+-----------------------------------------------------------------+
-| `symbol_to_entrez`              | Add entrez ID from gene symbol                                  |
-+---------------------------------+-----------------------------------------------------------------+
-| `describe_transcript`           | Add gene description from gene symbol                           |
-+---------------------------------+-----------------------------------------------------------------+
-| `impute_missing_abundance`      | Impute abundance for missing data points using sample groupings |
-+---------------------------------+-----------------------------------------------------------------+
-| `fill_missing_abundance`        | Fill abundance for missing data points using an arbitrary value |
-+---------------------------------+-----------------------------------------------------------------+
++----------------------------+-----------------------------------------------------------------+
+| Utilities                  | Description                                                     |
++============================+=================================================================+
+| `get_bibliography`         | Get the bibliography of your workflow                           |
++----------------------------+-----------------------------------------------------------------+
+| `tidybulk`                 | add tidybulk attributes to a tibble object                      |
++----------------------------+-----------------------------------------------------------------+
+| `tidybulk_SAM_BAM`         | Convert SAM BAM files into tidybulk tibble                      |
++----------------------------+-----------------------------------------------------------------+
+| `pivot_sample`             | Select sample-wise columns/information                          |
++----------------------------+-----------------------------------------------------------------+
+| `pivot_transcript`         | Select transcript-wise columns/information                      |
++----------------------------+-----------------------------------------------------------------+
+| `rotate_dimensions`        | Rotate two dimensions of a degree                               |
++----------------------------+-----------------------------------------------------------------+
+| `ensembl_to_symbol`        | Add gene symbol from ensembl IDs                                |
++----------------------------+-----------------------------------------------------------------+
+| `symbol_to_entrez`         | Add entrez ID from gene symbol                                  |
++----------------------------+-----------------------------------------------------------------+
+| `describe_transcript`      | Add gene description from gene symbol                           |
++----------------------------+-----------------------------------------------------------------+
+| `impute_missing_abundance` | Impute abundance for missing data points using sample groupings |
++----------------------------+-----------------------------------------------------------------+
+| `fill_missing_abundance`   | Fill abundance for missing data points using an arbitrary value |
++----------------------------+-----------------------------------------------------------------+
 
 ### Filtering lowly transcribed genes
 
@@ -258,7 +258,7 @@ counts_scaled <- counts_filtered %>% scale_abundance()
 counts_scaled
 ```
 
-After we run `scale_abundance` we should see some columns have been added at the end. The `counts_scaled` column contains the scaled counts.
+After we run `scale_abundance` we should see some columns have been added at the end. The column contains the scaled counts.
 
 We can visualise the difference in abundance densities before and after scaling. As tidybulk output is compatible with tidyverse, we can simply pipe it into standard tidyverse functions such as `filter`, `pivot_longer` and `ggplot`. We can also take advantage of ggplot's `facet_wrap` to easily create multiple plots.
 
@@ -276,7 +276,7 @@ counts_scaled %>%
   custom_theme
 ```
 
-In this dataset, the distributions of the counts are not very different to each other before scaling but scaling does make the distributions more similar. If we saw a sample with a very different distribution we may need to investigate it.
+In this dataset, the distributions of the counts are not very different to each other before scaling but scaling does make the distributions more similar. If we saw a sample with a very different distribution, we may need to investigate it.
 
 As tidybulk smoothly integrates with ggplot2 and other tidyverse packages it can save on typing and make plots easier to generate. Compare the code for creating density plots with tidybulk versus standard base R below (standard code adapted from [@law2016rna]).
 
@@ -336,7 +336,7 @@ legend("topright", legend = dgList_norm$samples$Run, text.col = col, bty = "n")
 
 ### Dimensionality reduction
 
-By far, one of the most important plots we make when we analyse RNA sequencing data are principal-component analysis (PCA) or multi-dimensional scaling (MDS) plots. We reduce the dimensions of the data to identify the greatest sources of variation in the data. A principal components analysis is an example of an unsupervised analysis, where we don't need to specify the groups. If your experiment is well controlled and has worked well, what we hope to see is that the greatest sources of variation in the data are the treatments/groups we are interested in. It is also an incredibly useful tool for quality control and checking for outliers. We can use the `reduce_dimensions` function to calculate the dimensions.
+By far, one of the most important plots we make when we analyse RNA sequencing data are principal-component analysis (PCA) or multi-dimensional scaling (MDS) plots. We reduce the dimensions of the data to identify the greatest sources of variation in the data. A principal components analysis is an example of an unsupervised analysis, where we don't need to specify the groups. If your experiment is well controlled and has worked well, we hope to see that the greatest sources of variation in the data are the treatments/groups we are interested in. It is also a handy tool for quality control and checking for outliers. We can use the `reduce_dimensions` function to calculate the dimensions.
 
 ```{r}
 # Get principal components
@@ -636,7 +636,6 @@ library(scuttle)
 library(EnsDb.Hsapiens.v86)
 library(celldex)
 library(ggbeeswarm)
-library(tidySingleCellExperiment)
 ```
 
 ## Introduction to tidySingleCellExperiment
@@ -645,13 +644,19 @@ The single-cell RNA sequencing data used here is 3000 cells in total, subsetted 
 
 Similar to what we saw with tidySummarizedExperiment, `tidySingleCellExperiment` package enables any *SingleCellExperiment* object to be displayed and manipulated according to tidy data principles, without affecting any *SingleCellExperiment* behaviour.
 
-If we load the *tidySingleCellExperiment* package and then view the pbmc data it displays as a tibble.
-
 ```{r}
 # load pbmc single cell RNA sequencing data
 pbmc <- monashMay5tidytranscriptomics::pbmc
 
 # take a look
+pbmc
+```
+
+If we load the *tidySingleCellExperiment* package and then view the pbmc data it displays as a tibble.
+
+```{r}
+library(tidySingleCellExperiment)
+
 pbmc
 ```
 
@@ -939,52 +944,6 @@ pbmc %>%
   ) 
 ```
 
-### Automatic cell type classification
-
-We can infer cell type identities (e.g. T cell) using *SingleR* [@aran2019reference] and manipulate the output using tidyverse. SingleR [accepts any log-normalised transcript abundance matrix](https://bioconductor.org/packages/devel/bioc/vignettes/SingleR/inst/doc/SingleR.html)
-
-```{r}
-# Reference cell types
-blueprint <- BlueprintEncodeData()
-
-cell_type <-
-    
-  # extracting counts from SingleCellExperiment object
-  assays(pbmc)$reconstructed %>%
-
-    # SingleR
-  SingleR(
-    ref = blueprint,
-    labels = blueprint$label.main,
-    clusters = pbmc %>% pull(label)
-  ) %>%
-    
-  # Formatting results
-  as.data.frame() %>%
-  as_tibble(rownames = "label") %>%
-  select(label, first.labels)
-
-cell_type
-```
-
-We join the cell type information to our pbmc data.
-
-```{r}
-# Join cell type info
-pbmc <-
-  pbmc %>%
-  left_join(cell_type, by = "label")
-
-# Reorder columns
-pbmc %>% select(cell, first.labels, everything())
-```
-
-We can easily summarise the results. For example, we can see how cell type classification overlaps with cluster classification.
-
-```{r}
-pbmc %>% count(label, first.labels)
-```
-
 ## Pseudobulk analyses
 
 It is sometimes useful to aggregate cell-wise transcript abundance into pseudobulk samples. It is possible to explore data and perform hypothesis testing with tools and data-source that we are more familiar with. For example, we can use edgeR in tidybulk to perform differential expression testing. For more details on pseudobulk analysis, see [here](https://hbctraining.github.io/scRNA%20sequencing/lessons/pseudobulk_DESeq2_scrnaseq.html).
@@ -1009,6 +968,24 @@ pbmc_bulk %>%
   # Tidybulk operations
   tidybulk::identify_abundant() %>%
   tidybulk::scale_abundance()
+```
+
+## tidyseurat
+
+```{r}
+library(SeuratObject)
+data(pbmc_small)
+
+pbmc_small
+```
+
+With `tidyseurat` we obtain the consistent tidy abstraction, effectively unifying Bioconductor- and Seurat-based containers for display and manipulation.
+
+```{r}
+
+library(tidyseurat)
+
+pbmc_small
 ```
 
 ## Key Points

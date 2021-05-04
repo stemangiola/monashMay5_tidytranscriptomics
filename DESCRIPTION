@@ -59,7 +59,9 @@ Imports:
     rlang,
     magrittr,
     batchelor,
-    ggbeeswarm
+    ggbeeswarm,
+    tidyseurat,
+    SeuratObject
 Suggests:
     knitr,
     rmarkdown,
