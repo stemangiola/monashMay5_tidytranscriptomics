@@ -24,19 +24,6 @@ More details on the workshop are below.
 
 This is necessary in order to reproduce the code shown in the workshop. The workshop is designed for R `4.0` and can be installed using one of the two ways below.
 
-### Via Docker image
-
-If you're familiar with [Docker](https://docs.docker.com/get-docker/) you could use the Docker image which has all the software pre-configured to the correct versions.
-
-```
-docker run -e PASSWORD=abc -p 8787:8787 stemangiola/monashMay5_tidytranscriptomics:monashMay5
-```
-
-Once running, navigate to <http://localhost:8787/> and then login with
-`Username:rstudio` and `Password:abc`.
-
-You should see the Rmarkdown file with all the workshop code which you can run.
-
 ### Via GitHub
 
 Alternatively, you could install the workshop using the commands below in R `4.0`.
