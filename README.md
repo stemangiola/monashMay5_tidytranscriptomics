@@ -5,7 +5,7 @@
 
 # Introduction to Tidy Transcriptomics
 <p float="left">
-<img height="100" alt="monashMay5" src="https://github.com/Bioconductor/BiocStickers/blob/71e4c2cb323c441daa0f2f9d48d3b8bbb564a3e2/events/monashMay5/monashMay5.png?raw=true"/>
+<img height="100" alt="monashMay5" src="https://honisoit.com/wp-content/uploads/2020/01/monash-uni-logo-resized.png?raw=true"/>
 <img height="100" alt="tidybulk" src="https://github.com/Bioconductor/BiocStickers/blob/master/tidybulk/tidybulk.png?raw=true"/>
 </p>
 
