@@ -645,18 +645,12 @@ The single-cell RNA sequencing data used here is 3000 cells in total, subsetted 
 Similar to what we saw with tidySummarizedExperiment, `tidySingleCellExperiment` package enables any *SingleCellExperiment* object to be displayed and manipulated according to tidy data principles, without affecting any *SingleCellExperiment* behaviour.
 
 ```{r}
+library(tidySingleCellExperiment)
+
 # load pbmc single cell RNA sequencing data
 pbmc <- monashMay5tidytranscriptomics::pbmc
 
 # take a look
-pbmc
-```
-
-If we load the *tidySingleCellExperiment* package and then view the pbmc data it displays as a tibble.
-
-```{r}
-library(tidySingleCellExperiment)
-
 pbmc
 ```
 
