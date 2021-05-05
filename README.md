@@ -59,16 +59,13 @@ This can be achieved for RNA sequencing data with the [tidySummarizedExperiment]
 Recommended Background Reading
 [Introduction to R for Biologists](https://melbournebioinformatics.github.io/r-intro-biologists/intro_r_biologists.html)
 
-### Talk Participation
-
-The talk format is a 2 hour session consisting of hands-on demos and Q&A.
-
 ### _R_ / _Bioconductor_ packages used
 
 * tidyverse
 * tidybulk
 * tidySummarizedExperiment
 * tidySingleCellExperiment
+* tidyseurat
 * tidyHeatmap
 * limma
 * edgeR
@@ -79,17 +76,6 @@ The talk format is a 2 hour session consisting of hands-on demos and Q&A.
 * ggrepel
 * GGally
 * plotly
-
-
-### Time outline
-
-Guide
-
-| Activity - Hands on demos with Q&A                                 | Time |
-|--------------------------------------------------------------------|------|
-| Part 1 Bulk RNA-seq with tidybulk                                  |  60  |
-| Part 2 Single-cell RNA-seq with tidySingleCellExperiment           |  60  |
-| Total                                                              | 120m |
 
 ### Talk goals and objectives
 

@@ -16,14 +16,10 @@ navbar:
   title: ~
   type: default
   left:
-    - text: Background
-      href: articles/background.html
     - text: Talk
       href: articles/tidytranscriptomics.html
 
   right:
    - icon: fab fa-github
      href: https://github.com/stemangiola/monashMay5_tidytranscriptomics
-   - icon: fab fa-docker
-     href: https://hub.docker.com/repository/docker/stemangiola/monashMay5_tidytranscriptomics
     
