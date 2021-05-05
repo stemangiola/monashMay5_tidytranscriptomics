@@ -960,11 +960,9 @@ pbmc_bulk %>%
 
 ## tidyseurat
 
-```{r echo=FALSE, message=FALSE}
-library(SeuratObject)
-```
-
 ```{r}
+library(SeuratObject)
+
 data(pbmc_small)
 
 pbmc_small
@@ -972,10 +970,12 @@ pbmc_small
 
 With `tidyseurat` we obtain the consistent tidy abstraction, effectively unifying Bioconductor- and Seurat-based containers for display and manipulation.
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 
 library(tidyseurat)
+```
 
+```{r}
 pbmc_small
 ```
 
@@ -984,6 +984,7 @@ pbmc_small
 -   Some basic steps of a single-cell RNA sequencing analysis are dimensionality reduction, cluster identification and cell-type classification
 -   `tidySingleCellExperiment` is an invisible layer that operates on a `SingleCellExperiment` object and enables us to visualise and manipulate data as if it were a tidy data frame.
 -   `tidySingleCellExperiment` object is a `SingleCellExperiment object` so it can be used with any `SingleCellExperiment` compatible method
+- `tidyseurat` behaves consistently with `tidySingleCellExperiment`
 
 # Contributing
 
