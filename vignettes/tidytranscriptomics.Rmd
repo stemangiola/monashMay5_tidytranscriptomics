@@ -20,8 +20,6 @@ knitr::opts_chunk$set(
 
 # Talk introduction
 
-Background information and setup instructions for this talk can be found [here](https://stemangiola.github.io/monashMay5_tidytranscriptomics/articles/background.html).
-
 This talk will present how to perform analysis of RNA sequencing data following the tidy data paradigm [@wickham2014tidy]. The tidy data paradigm provides a standard way to organise data values within a dataset. Each variable is a column, each observation is a row, and data is manipulated using an easy-to-understand vocabulary. Most importantly, the data structure remains consistent across manipulation and analysis functions. [tidybulk](https://stemangiola.github.io/tidybulk/), [tidySummarizedExperiment](https://stemangiola.github.io/tidySummarizedExperiment/) and [tidySingleCellExperiment](https://stemangiola.github.io/tidySingleCellExperiment/) packages can achieve this consistency for RNA sequencing data. These packages are part of the tidytranscriptomics suite that introduces a tidy approach to RNA sequencing data representation and analysis. The roadmap for the development of the tidytranscriptomics packages is shown in the figure below.
 
 ```{r, echo=FALSE, out.width = "600px"}
@@ -619,7 +617,7 @@ get_bibliography(counts_de)
 
 # Part 2 Single-cell RNA sequencing with tidySingleCellExperiment
 
-A typical single-cell RNA sequencing workflow is shown in [Background information](https://stemangiola.github.io/monashMay5_tidytranscriptomics/articles/background.html#differences-between-bulk-and-single-cell-RNA%20sequencinguencing-1). We don't have time in this talk to go into depth on each step, but you can read more about single-cell RNA sequencing workflows in the online book [Orchestrating Single-Cell Analysis with Bioconductor](http://bioconductor.org/books/release/OSCA/index.html).
+You can read more about single-cell RNA sequencing workflows in the online book [Orchestrating Single-Cell Analysis with Bioconductor](http://bioconductor.org/books/release/OSCA/index.html).
 
 In Part 1, we showed how we can study the cell-type composition of a biological sample using bulk RNA sequencing. Single-cell sequencing enables a more direct estimation of cell-type composition and gives a greater resolution. For bulk RNA sequencing, we need to infer the cell types using the abundance of transcripts in the whole sample. With single-cell RNA sequencing, we can directly measure the transcripts in each cell and then classify the cells into cell types.
 
