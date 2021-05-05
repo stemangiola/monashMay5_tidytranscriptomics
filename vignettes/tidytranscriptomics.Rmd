@@ -654,6 +654,18 @@ pbmc <- monashMay5tidytranscriptomics::pbmc
 pbmc
 ```
 
+### Join transcript information
+
+```{r}
+
+pbmc %>%
+  join_features(c("CD3G", "CD8A"), shape="wide") %>%
+  
+  # Select columns for display
+  select(cell, CD3G, CD8A, everything())
+
+```
+
 It can be interacted with using [SingleCellExperiment commands](https://bioconductor.org/packages/release/bioc/vignettes/SingleCellExperiment/inst/doc/intro.html) such as `assayNames`.
 
 ```{r}
@@ -948,8 +960,11 @@ pbmc_bulk %>%
 
 ## tidyseurat
 
-```{r}
+```{r echo=FALSE, message=FALSE}
 library(SeuratObject)
+```
+
+```{r}
 data(pbmc_small)
 
 pbmc_small
