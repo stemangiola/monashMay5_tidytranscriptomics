@@ -1419,36 +1419,35 @@
 <span class="co">#&gt; [90m# Features=51958 | Assays=reconstructed[39m</span>
 <span class="co">#&gt;    cell       label batch corrected1 corrected2 corrected3 corrected4 corrected5</span>
 <span class="co">#&gt;    &lt;chr&gt;      &lt;fct&gt; &lt;int&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 CCAGTCACA… 3         1   -0.0645      0.334     -0.0725     0.0560   -0.0739 </span>
-<span class="co">#&gt;  2 ATGAGCACA… 7         1   -0.178      -0.0167    -0.122      0.122     0.0233 </span>
-<span class="co">#&gt;  3 TATGAATGG… 6         1   -0.0601      0.0356     0.126      0.293     0.0128 </span>
-<span class="co">#&gt;  4 CATATAGAC… 12        1   -0.0762      0.282     -0.121      0.0546   -0.00291</span>
-<span class="co">#&gt;  5 GAGGCAGAC… 2         1   -0.0755      0.0423     0.0976     0.259     0.0249 </span>
-<span class="co">#&gt;  6 AGCTGCCTT… 4         1   -0.117       0.0242    -0.0729     0.159     0.0170 </span>
-<span class="co">#&gt;  7 TGATTAGAT… 1         1   -0.146       0.0752    -0.143      0.0488    0.0914 </span>
-<span class="co">#&gt;  8 ACGAAGCTC… 1         1   -0.119       0.108     -0.127      0.0505    0.0624 </span>
-<span class="co">#&gt;  9 CGGCATCTT… 3         1   -0.00953     0.407     -0.0465     0.0804   -0.0522 </span>
-<span class="co">#&gt; 10 ATAGCGTGC… 3         1   -0.0563      0.367     -0.105      0.0590   -0.0610 </span>
+<span class="co">#&gt;  1 CCAGTCACA… 4         1    0.0645     -0.334      0.0725     0.0560    0.0739 </span>
+<span class="co">#&gt;  2 ATGAGCACA… 3         1    0.178       0.0166     0.122      0.122    -0.0233 </span>
+<span class="co">#&gt;  3 TATGAATGG… 1         1    0.0600     -0.0355    -0.126      0.293    -0.0128 </span>
+<span class="co">#&gt;  4 CATATAGAC… 11        1    0.0761     -0.282      0.121      0.0546    0.00292</span>
+<span class="co">#&gt;  5 GAGGCAGAC… 1         1    0.0755     -0.0423    -0.0976     0.259    -0.0248 </span>
+<span class="co">#&gt;  6 AGCTGCCTT… 5         1    0.117      -0.0242     0.0729     0.159    -0.0170 </span>
+<span class="co">#&gt;  7 TGATTAGAT… 2         1    0.146      -0.0752     0.143      0.0488   -0.0914 </span>
+<span class="co">#&gt;  8 ACGAAGCTC… 2         1    0.119      -0.108      0.127      0.0505   -0.0624 </span>
+<span class="co">#&gt;  9 CGGCATCTT… 4         1    0.00942    -0.407      0.0465     0.0803    0.0523 </span>
+<span class="co">#&gt; 10 ATAGCGTGC… 4         1    0.0562     -0.367      0.105      0.0589    0.0610 </span>
 <span class="co">#&gt; # … with 2,889 more rows</span></code></pre></div>
 <p>Thanks to tidySingleCellExperiment we can interrogate the object with tidyverse commands and use <code>count</code> to count the number of cells in each cluster.</p>
 <div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pbmc</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/pkg/tidySingleCellExperiment/man/count.html">count</a></span><span class="op">(</span><span class="va">label</span><span class="op">)</span>
 <span class="co">#&gt; tidySingleCellExperiment says: A data frame is returned for independent data analysis.</span>
-<span class="co">#&gt; # A tibble: 12 x 2</span>
+<span class="co">#&gt; # A tibble: 11 x 2</span>
 <span class="co">#&gt;    label     n</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt;</span>
-<span class="co">#&gt;  1 1       367</span>
-<span class="co">#&gt;  2 2       482</span>
-<span class="co">#&gt;  3 3       339</span>
-<span class="co">#&gt;  4 4       477</span>
-<span class="co">#&gt;  5 5        21</span>
-<span class="co">#&gt;  6 6       256</span>
-<span class="co">#&gt;  7 7       399</span>
-<span class="co">#&gt;  8 8       403</span>
-<span class="co">#&gt;  9 9        74</span>
-<span class="co">#&gt; 10 10       41</span>
-<span class="co">#&gt; 11 11       14</span>
-<span class="co">#&gt; 12 12       26</span></code></pre></div>
+<span class="co">#&gt;  1 1       490</span>
+<span class="co">#&gt;  2 2       367</span>
+<span class="co">#&gt;  3 3       789</span>
+<span class="co">#&gt;  4 4       339</span>
+<span class="co">#&gt;  5 5       502</span>
+<span class="co">#&gt;  6 6        21</span>
+<span class="co">#&gt;  7 7       236</span>
+<span class="co">#&gt;  8 8        74</span>
+<span class="co">#&gt;  9 9        41</span>
+<span class="co">#&gt; 10 10       14</span>
+<span class="co">#&gt; 11 11       26</span></code></pre></div>
 </div>
 <div id="reduce-dimensions" class="section level2">
 <h2 class="hasAnchor">
@@ -1484,16 +1483,16 @@
 <span class="co">#&gt; [90m# Features=51958 | Assays=reconstructed[39m</span>
 <span class="co">#&gt;    cell  batch label corrected1 corrected2 corrected3 corrected4 corrected5</span>
 <span class="co">#&gt;    &lt;chr&gt; &lt;int&gt; &lt;fct&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 CCAG…     1 3       -0.0645      0.334     -0.0725     0.0560   -0.0739 </span>
-<span class="co">#&gt;  2 ATGA…     1 7       -0.178      -0.0167    -0.122      0.122     0.0233 </span>
-<span class="co">#&gt;  3 TATG…     1 6       -0.0601      0.0356     0.126      0.293     0.0128 </span>
-<span class="co">#&gt;  4 CATA…     1 12      -0.0762      0.282     -0.121      0.0546   -0.00291</span>
-<span class="co">#&gt;  5 GAGG…     1 2       -0.0755      0.0423     0.0976     0.259     0.0249 </span>
-<span class="co">#&gt;  6 AGCT…     1 4       -0.117       0.0242    -0.0729     0.159     0.0170 </span>
-<span class="co">#&gt;  7 TGAT…     1 1       -0.146       0.0752    -0.143      0.0488    0.0914 </span>
-<span class="co">#&gt;  8 ACGA…     1 1       -0.119       0.108     -0.127      0.0505    0.0624 </span>
-<span class="co">#&gt;  9 CGGC…     1 3       -0.00953     0.407     -0.0465     0.0804   -0.0522 </span>
-<span class="co">#&gt; 10 ATAG…     1 3       -0.0563      0.367     -0.105      0.0590   -0.0610 </span>
+<span class="co">#&gt;  1 CCAG…     1 4        0.0645     -0.334      0.0725     0.0560    0.0739 </span>
+<span class="co">#&gt;  2 ATGA…     1 3        0.178       0.0166     0.122      0.122    -0.0233 </span>
+<span class="co">#&gt;  3 TATG…     1 1        0.0600     -0.0355    -0.126      0.293    -0.0128 </span>
+<span class="co">#&gt;  4 CATA…     1 11       0.0761     -0.282      0.121      0.0546    0.00292</span>
+<span class="co">#&gt;  5 GAGG…     1 1        0.0755     -0.0423    -0.0976     0.259    -0.0248 </span>
+<span class="co">#&gt;  6 AGCT…     1 5        0.117      -0.0242     0.0729     0.159    -0.0170 </span>
+<span class="co">#&gt;  7 TGAT…     1 2        0.146      -0.0752     0.143      0.0488   -0.0914 </span>
+<span class="co">#&gt;  8 ACGA…     1 2        0.119      -0.108      0.127      0.0505   -0.0624 </span>
+<span class="co">#&gt;  9 CGGC…     1 4        0.00942    -0.407      0.0465     0.0803    0.0523 </span>
+<span class="co">#&gt; 10 ATAG…     1 4        0.0562     -0.367      0.105      0.0589    0.0610 </span>
 <span class="co">#&gt; # … with 5,788 more rows, and 3 more variables: UMAP1 &lt;dbl&gt;, UMAP2 &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   UMAP3 &lt;dbl&gt;</span></code></pre></div>
 </div>
@@ -1557,7 +1556,17 @@
 <h2 class="hasAnchor">
 <a href="#tidyseurat" class="anchor"></a>tidyseurat</h2>
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">pbmc_small</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://satijalab.org/seurat">SeuratObject</a></span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'SeuratObject'</span>
+<span class="co">#&gt; The following object is masked from 'package:tidySingleCellExperiment':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     pbmc_small</span>
+<span class="co">#&gt; The following object is masked from 'package:SummarizedExperiment':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     Assays</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">pbmc_small</span><span class="op">)</span>
 
 <span class="va">pbmc_small</span>
 <span class="co">#&gt; An object of class Seurat </span>
@@ -1567,60 +1576,9 @@
 <p>With <code>tidyseurat</code> we obtain the consistent tidy abstraction, effectively unifying Bioconductor- and Seurat-based containers for display and manipulation.</p>
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">tidyseurat</span><span class="op">)</span>
-<span class="co">#&gt; Loading required package: Seurat</span>
-<span class="co">#&gt; Registered S3 method overwritten by 'spatstat.geom':</span>
-<span class="co">#&gt;   method     from</span>
-<span class="co">#&gt;   print.boxx cli</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'Seurat'</span>
-<span class="co">#&gt; The following object is masked from 'package:SummarizedExperiment':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     Assays</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'tidyseurat'</span>
-<span class="co">#&gt; The following object is masked _by_ '.GlobalEnv':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     pbmc_small</span>
-<span class="co">#&gt; The following object is masked from 'package:SeuratObject':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     pbmc_small</span>
-<span class="co">#&gt; The following objects are masked from 'package:tidySingleCellExperiment':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     add_count, bind_cols, bind_rows, count, join_transcripts,</span>
-<span class="co">#&gt;     pbmc_small, plot_ly, tidy</span>
-<span class="co">#&gt; The following objects are masked from 'package:ensembldb':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     filter, select</span>
-<span class="co">#&gt; The following object is masked from 'package:AnnotationDbi':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     select</span>
-<span class="co">#&gt; The following objects are masked from 'package:tidySummarizedExperiment':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     bind_cols, bind_rows, count, plot_ly, tidy</span>
-<span class="co">#&gt; The following objects are masked from 'package:tidybulk':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     bind_cols, bind_rows</span>
-<span class="co">#&gt; The following object is masked from 'package:plotly':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     plot_ly</span>
-<span class="co">#&gt; The following objects are masked from 'package:dplyr':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     add_count, bind_cols, bind_rows, count</span>
-<span class="co">#&gt; The following object is masked from 'package:IRanges':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     slice</span>
-<span class="co">#&gt; The following object is masked from 'package:S4Vectors':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     rename</span>
-<span class="co">#&gt; The following object is masked from 'package:matrixStats':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     count</span>
-<span class="co">#&gt; The following object is masked from 'package:stats':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     filter</span>
-
-<span class="va">pbmc_small</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">tidyseurat</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">pbmc_small</span>
 <span class="co">#&gt; # A Seurat-tibble abstraction: 80 x 15</span>
 <span class="co">#&gt; [90m# Transcripts=230 | Active assay=RNA | Assays=RNA[39m</span>
 <span class="co">#&gt;    cell  orig.ident nCount_RNA nFeature_RNA RNA_snn_res.0.8 letter.idents groups</span>
@@ -1647,6 +1605,9 @@
 <code>tidySingleCellExperiment</code> is an invisible layer that operates on a <code>SingleCellExperiment</code> object and enables us to visualise and manipulate data as if it were a tidy data frame.</li>
 <li>
 <code>tidySingleCellExperiment</code> object is a <code>SingleCellExperiment object</code> so it can be used with any <code>SingleCellExperiment</code> compatible method</li>
+<li>
+<code>tidyseurat</code> behaves consistently with <code>tidySingleCellExperiment</code>
+</li>
 </ul>
 </div>
 </div>
@@ -1659,7 +1620,7 @@
 <h1 class="hasAnchor">
 <a href="#reproducibility" class="anchor"></a>Reproducibility</h1>
 <p>Record package and version information with <code>sessionInfo</code></p>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; R version 4.0.3 (2020-10-10)</span>
 <span class="co">#&gt; Platform: x86_64-pc-linux-gnu (64-bit)</span>
