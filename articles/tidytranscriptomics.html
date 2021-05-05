@@ -84,7 +84,7 @@
 <div id="talk-introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#talk-introduction" class="anchor"></a>Talk introduction</h1>
-<p>This talk will present how to perform analysis of RNA sequencing data following the tidy data paradigm <span class="citation">(Wickham and others 2014)</span>. The tidy data paradigm provides a standard way to organise data values within a dataset. Each variable is a column, each observation is a row, and data is manipulated using an easy-to-understand vocabulary. Most importantly, the data structure remains consistent across manipulation and analysis functions. <a href="https://stemangiola.github.io/tidybulk/">tidybulk</a>, <a href="https://stemangiola.github.io/tidySummarizedExperiment/">tidySummarizedExperiment</a> and <a href="https://stemangiola.github.io/tidySingleCellExperiment/">tidySingleCellExperiment</a> packages can achieve this consistency for RNA sequencing data. These packages are part of the tidytranscriptomics suite that introduces a tidy approach to RNA sequencing data representation and analysis. The roadmap for the development of the tidytranscriptomics packages is shown in the figure below.</p>
+<p>This talk will present how to perform analysis of RNA sequencing data following the tidy data paradigm <span class="citation">(Wickham and others 2014)</span>. The tidy data paradigm provides a standard way to organise data values within a dataset. Each variable is a column, each observation is a row, and data is manipulated using an easy-to-understand vocabulary. Most importantly, the data structure remains consistent across manipulation and analysis functions. <a href="https://stemangiola.github.io/tidybulk/">tidybulk</a>, <a href="https://stemangiola.github.io/tidySummarizedExperiment/">tidySummarizedExperiment</a>, <a href="https://stemangiola.github.io/tidySingleCellExperiment/">tidySingleCellExperiment</a> and <a href="https://stemangiola.github.io/tidyseurat/">tidyseurat</a> packages can achieve this consistency for RNA sequencing data. These packages are part of the tidytranscriptomics suite that introduces a tidy approach to RNA sequencing data representation and analysis. The roadmap for the development of the tidytranscriptomics packages is shown in the figure below.</p>
 <p><img src="../inst/vignettes/roadmap.png" width="600px"></p>
 </div>
 <div id="part-1-bulk-rna-sequencing-with-tidysummarizedexperiment-and-tidybulk" class="section level1">
@@ -1409,36 +1409,35 @@
 <span class="co">#&gt; [90m# Features=51958 | Assays=reconstructed[39m</span>
 <span class="co">#&gt;    cell       label batch corrected1 corrected2 corrected3 corrected4 corrected5</span>
 <span class="co">#&gt;    &lt;chr&gt;      &lt;fct&gt; &lt;int&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 CCAGTCACA… 3         1    0.0645     -0.334      0.0725     0.0560    0.0739 </span>
-<span class="co">#&gt;  2 ATGAGCACA… 10        1    0.178       0.0166     0.122      0.122    -0.0233 </span>
-<span class="co">#&gt;  3 TATGAATGG… 7         1    0.0600     -0.0356    -0.126      0.293    -0.0128 </span>
-<span class="co">#&gt;  4 CATATAGAC… 12        1    0.0761     -0.282      0.121      0.0546    0.00292</span>
-<span class="co">#&gt;  5 GAGGCAGAC… 2         1    0.0755     -0.0423    -0.0976     0.259    -0.0248 </span>
-<span class="co">#&gt;  6 AGCTGCCTT… 4         1    0.117      -0.0242     0.0729     0.159    -0.0170 </span>
-<span class="co">#&gt;  7 TGATTAGAT… 1         1    0.146      -0.0752     0.143      0.0488   -0.0914 </span>
-<span class="co">#&gt;  8 ACGAAGCTC… 1         1    0.119      -0.108      0.127      0.0505   -0.0624 </span>
-<span class="co">#&gt;  9 CGGCATCTT… 3         1    0.00942    -0.407      0.0465     0.0803    0.0523 </span>
-<span class="co">#&gt; 10 ATAGCGTGC… 3         1    0.0562     -0.367      0.105      0.0589    0.0610 </span>
+<span class="co">#&gt;  1 CCAGTCACA… 5         1   -0.0643     -0.334      0.0725    -0.0559   -0.0739 </span>
+<span class="co">#&gt;  2 ATGAGCACA… 3         1   -0.178       0.0166     0.122     -0.122     0.0233 </span>
+<span class="co">#&gt;  3 TATGAATGG… 7         1   -0.0602     -0.0356    -0.127     -0.293     0.0128 </span>
+<span class="co">#&gt;  4 CATATAGAC… 11        1   -0.0760     -0.282      0.121     -0.0546   -0.00285</span>
+<span class="co">#&gt;  5 GAGGCAGAC… 2         1   -0.0756     -0.0424    -0.0977    -0.259     0.0248 </span>
+<span class="co">#&gt;  6 AGCTGCCTT… 4         1   -0.117      -0.0242     0.0729    -0.159     0.0170 </span>
+<span class="co">#&gt;  7 TGATTAGAT… 1         1   -0.146      -0.0753     0.143     -0.0489    0.0916 </span>
+<span class="co">#&gt;  8 ACGAAGCTC… 1         1   -0.119      -0.108      0.127     -0.0505    0.0624 </span>
+<span class="co">#&gt;  9 CGGCATCTT… 5         1   -0.00940    -0.407      0.0466    -0.0803   -0.0522 </span>
+<span class="co">#&gt; 10 ATAGCGTGC… 5         1   -0.0561     -0.367      0.105     -0.0589   -0.0610 </span>
 <span class="co">#&gt; # … with 2,889 more rows</span></code></pre></div>
 <p>Thanks to tidySingleCellExperiment we can interrogate the object with tidyverse commands and use <code>count</code> to count the number of cells in each cluster.</p>
 <div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pbmc</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/pkg/tidySingleCellExperiment/man/count.html">count</a></span><span class="op">(</span><span class="va">label</span><span class="op">)</span>
 <span class="co">#&gt; tidySingleCellExperiment says: A data frame is returned for independent data analysis.</span>
-<span class="co">#&gt; # A tibble: 12 x 2</span>
+<span class="co">#&gt; # A tibble: 11 x 2</span>
 <span class="co">#&gt;    label     n</span>
 <span class="co">#&gt;    &lt;fct&gt; &lt;int&gt;</span>
 <span class="co">#&gt;  1 1       367</span>
-<span class="co">#&gt;  2 2       482</span>
-<span class="co">#&gt;  3 3       339</span>
-<span class="co">#&gt;  4 4       480</span>
-<span class="co">#&gt;  5 5        21</span>
-<span class="co">#&gt;  6 6       444</span>
-<span class="co">#&gt;  7 7       256</span>
+<span class="co">#&gt;  2 2       481</span>
+<span class="co">#&gt;  3 3       733</span>
+<span class="co">#&gt;  4 4       548</span>
+<span class="co">#&gt;  5 5       339</span>
+<span class="co">#&gt;  6 6        21</span>
+<span class="co">#&gt;  7 7       255</span>
 <span class="co">#&gt;  8 8        74</span>
 <span class="co">#&gt;  9 9        41</span>
-<span class="co">#&gt; 10 10      355</span>
-<span class="co">#&gt; 11 11       14</span>
-<span class="co">#&gt; 12 12       26</span></code></pre></div>
+<span class="co">#&gt; 10 10       14</span>
+<span class="co">#&gt; 11 11       26</span></code></pre></div>
 </div>
 <div id="reduce-dimensions" class="section level2">
 <h2 class="hasAnchor">
@@ -1474,16 +1473,16 @@
 <span class="co">#&gt; [90m# Features=51958 | Assays=reconstructed[39m</span>
 <span class="co">#&gt;    cell  batch label corrected1 corrected2 corrected3 corrected4 corrected5</span>
 <span class="co">#&gt;    &lt;chr&gt; &lt;int&gt; &lt;fct&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 CCAG…     1 3        0.0645     -0.334      0.0725     0.0560    0.0739 </span>
-<span class="co">#&gt;  2 ATGA…     1 10       0.178       0.0166     0.122      0.122    -0.0233 </span>
-<span class="co">#&gt;  3 TATG…     1 7        0.0600     -0.0356    -0.126      0.293    -0.0128 </span>
-<span class="co">#&gt;  4 CATA…     1 12       0.0761     -0.282      0.121      0.0546    0.00292</span>
-<span class="co">#&gt;  5 GAGG…     1 2        0.0755     -0.0423    -0.0976     0.259    -0.0248 </span>
-<span class="co">#&gt;  6 AGCT…     1 4        0.117      -0.0242     0.0729     0.159    -0.0170 </span>
-<span class="co">#&gt;  7 TGAT…     1 1        0.146      -0.0752     0.143      0.0488   -0.0914 </span>
-<span class="co">#&gt;  8 ACGA…     1 1        0.119      -0.108      0.127      0.0505   -0.0624 </span>
-<span class="co">#&gt;  9 CGGC…     1 3        0.00942    -0.407      0.0465     0.0803    0.0523 </span>
-<span class="co">#&gt; 10 ATAG…     1 3        0.0562     -0.367      0.105      0.0589    0.0610 </span>
+<span class="co">#&gt;  1 CCAG…     1 5       -0.0643     -0.334      0.0725    -0.0559   -0.0739 </span>
+<span class="co">#&gt;  2 ATGA…     1 3       -0.178       0.0166     0.122     -0.122     0.0233 </span>
+<span class="co">#&gt;  3 TATG…     1 7       -0.0602     -0.0356    -0.127     -0.293     0.0128 </span>
+<span class="co">#&gt;  4 CATA…     1 11      -0.0760     -0.282      0.121     -0.0546   -0.00285</span>
+<span class="co">#&gt;  5 GAGG…     1 2       -0.0756     -0.0424    -0.0977    -0.259     0.0248 </span>
+<span class="co">#&gt;  6 AGCT…     1 4       -0.117      -0.0242     0.0729    -0.159     0.0170 </span>
+<span class="co">#&gt;  7 TGAT…     1 1       -0.146      -0.0753     0.143     -0.0489    0.0916 </span>
+<span class="co">#&gt;  8 ACGA…     1 1       -0.119      -0.108      0.127     -0.0505    0.0624 </span>
+<span class="co">#&gt;  9 CGGC…     1 5       -0.00940    -0.407      0.0466    -0.0803   -0.0522 </span>
+<span class="co">#&gt; 10 ATAG…     1 5       -0.0561     -0.367      0.105     -0.0589   -0.0610 </span>
 <span class="co">#&gt; # … with 5,788 more rows, and 3 more variables: UMAP1 &lt;dbl&gt;, UMAP2 &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   UMAP3 &lt;dbl&gt;</span></code></pre></div>
 </div>
