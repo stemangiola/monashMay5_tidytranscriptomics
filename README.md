@@ -7,7 +7,7 @@
 <p float="left">
 <img height="100" alt="monashMay5" src="https://honisoit.com/wp-content/uploads/2020/01/monash-uni-logo-resized.png?raw=true"/>
 <img height="100" alt="tidybulk" src="https://github.com/Bioconductor/BiocStickers/blob/master/tidybulk/tidybulk.png?raw=true"/>
-</p>
+</p> 
 
 ## Instructor names and contact information
 
