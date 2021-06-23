@@ -16,7 +16,7 @@
 
 ## Syllabus
 
-Material [web page](https://stemangiola.github.io/monashMay5_tidytranscriptomics/articles/tidytranscriptomics.html).
+Material [web page](https://tidy-transcriptomics-workshops.github.io/monashMay5_tidytranscriptomics/articles/tidytranscriptomics.html).
 
 More details on the talk are below.
 
